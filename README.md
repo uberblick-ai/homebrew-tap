@@ -1,5 +1,10 @@
 # Uberblick Homebrew tap
 
-This repository hosts the Homebrew formula and public release artifacts for Uberblick.
+This repository hosts Homebrew formulae for Uberblick tools.
 
-Release automation maintains the formula and artifacts. The source repository remains private.
+- **uberblick**: `brew install uberblick-ai/tap/uberblick`. Release automation
+  maintains the formula and its public release artifacts; the source repository
+  remains private.
+- **ub-agents**: `brew install uberblick-ai/tap/ub-agents`. Built from the tagged
+  releases of the public [ub-agents](https://github.com/uberblick-ai/ub-agents)
+  repository; `brew install --HEAD uberblick-ai/tap/ub-agents` tracks its `main`.
