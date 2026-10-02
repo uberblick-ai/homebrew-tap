@@ -3,8 +3,8 @@ class UbAgents < Formula
 
   desc "Run coding agents in a GitHub-driven engineering loop"
   homepage "https://github.com/uberblick-ai/ub-agents"
-  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.1.7.tar.gz"
-  sha256 "ff868c70289323e89602b71ee0d5f0828116007bd7901c6ea3ffbb44a7c9a03e"
+  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "b0e856db15073966e299511b1596c64631c64f03396f8566439a4dfeb040355f"
   license "MIT"
   head "https://github.com/uberblick-ai/ub-agents.git", branch: "main"
 
