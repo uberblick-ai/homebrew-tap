@@ -3,8 +3,10 @@ class UbAgents < Formula
 
   desc "Run coding agents in a GitHub-driven engineering loop"
   homepage "https://github.com/uberblick-ai/ub-agents"
-  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.1.10.tar.gz"
-  sha256 "4e9d075da9c1b7e406046c0ef80331066ed2344315b0f4faf9dc7e60eca0fad3"
+  url "https://github.com/uberblick-ai/ub-agents/archive/a2aeb5f1a4da63b6d97e572c4d2eaf5d2a949658.tar.gz"
+  version "0.1.10"
+  revision 1
+  sha256 "e8b6bea5c6c623773ad43088e0538949dd9219ff203aa9713454fe74900bbd88"
   license "MIT"
   head "https://github.com/uberblick-ai/ub-agents.git", branch: "main"
 
@@ -18,7 +20,11 @@ class UbAgents < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, Formula["python@3.14"].opt_bin/"python3.14")
+    venv.pip_install resources
+    venv.pip_install buildpath
+    # Export only the base command; the opt-in package owns the view entrypoint.
+    bin.install_symlink libexec/"bin/ub-agents"
   end
 
   test do
