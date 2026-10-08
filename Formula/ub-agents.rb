@@ -3,8 +3,8 @@ class UbAgents < Formula
 
   desc "Run coding agents in a GitHub-driven engineering loop"
   homepage "https://github.com/uberblick-ai/ub-agents"
-  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.1.15.tar.gz"
-  sha256 "b5397ac407d699ae386bd8d462beacd857d63103cf2538404b64a77bd36ed70f"
+  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.1.16.tar.gz"
+  sha256 "920f7b3ec575efb22ac49685ca29ac4f783b8acd6f9d6e855a4b8a7af592942d"
   license "MIT"
   head "https://github.com/uberblick-ai/ub-agents.git", branch: "main"
 
@@ -70,8 +70,7 @@ class UbAgents < Formula
     assert_match "ub-agents #{version}", shell_output("#{bin}/ub-agents --version")
     system bin/"ub-agents", "init", "--repository", "example/project"
     assert_match "Valid configuration: example/project", shell_output("#{bin}/ub-agents check")
-    assert_match "ub-agents-ui #{version}", shell_output("#{bin}/ub-agents-ui --version")
-    system bin/"ub-agents-ui", "--probe", "--base-version", version.to_s
+    system libexec/"bin/python", "-m", "ub_agents.view", "--probe", "--base-version", version.to_s
     system libexec/"bin/python", "-c", "from ub_agents.view_ui import View"
   end
 end
