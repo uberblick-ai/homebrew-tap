@@ -68,8 +68,10 @@ class UbAgents < Formula
 
   test do
     assert_match "ub-agents #{version}", shell_output("#{bin}/ub-agents --version")
+    system "git", "init"
+    system "git", "remote", "add", "origin", "https://github.com/example/project.git"
     system bin/"ub-agents", "init", "--repository", "example/project"
-    assert_match "Valid configuration: example/project", shell_output("#{bin}/ub-agents check")
+    assert_match "0 required failures", shell_output("#{bin}/ub-agents doctor --offline")
     system libexec/"bin/python", "-c", "from ub_agents.view_ui import View"
   end
 end
