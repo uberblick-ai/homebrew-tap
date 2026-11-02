@@ -3,8 +3,8 @@ class UbAgents < Formula
 
   desc "Run coding agents in a GitHub-driven engineering loop"
   homepage "https://github.com/uberblick-ai/ub-agents"
-  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5dc0739c9863b3357c18d20b8a67f8bc7d0f2983bf8adcedfe28d52ad5210dd9"
+  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "7140b93dcaff48aac82c61b3e51a47755676199a5b3aa32b23bc29ccdecc42ee"
   license "MIT"
   head "https://github.com/uberblick-ai/ub-agents.git", branch: "main"
 
@@ -33,8 +33,8 @@ class UbAgents < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/6e/4e/2684728d9f2c8c4110738dcadca7e0bed4b60c8dc68c40c2a9e0cf017900/platformdirs-4.14.2.tar.gz"
-    sha256 "6d13b4c1d66b7548dcec9e3db13c1ba9d9adb65041b5d07869313afc07e6e41b"
+    url "https://files.pythonhosted.org/packages/9a/6e/886dc7c9d21e2d95aceb696f1e31271742033aeef3661f6e9c8921493592/platformdirs-4.14.3.tar.gz"
+    sha256 "021add1ab113483edbcd4694f5fbb2d688b893ea30d35e1155bb371cf4be0be8"
   end
 
   resource "pygments" do
@@ -72,6 +72,6 @@ class UbAgents < Formula
     system "git", "remote", "add", "origin", "https://github.com/example/project.git"
     system bin/"ub-agents", "init", "--repository", "example/project"
     assert_match "0 required failures", shell_output("#{bin}/ub-agents doctor --offline")
-    system libexec/"bin/python", "-c", "from ub_agents.view_ui import View"
+    system libexec/"bin/python", "-c", "from ub_agents.view.ui import View"
   end
 end
