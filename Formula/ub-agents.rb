@@ -3,14 +3,14 @@ class UbAgents < Formula
 
   desc "Run coding agents in a GitHub-driven engineering loop"
   homepage "https://github.com/uberblick-ai/ub-agents"
-  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "7140b93dcaff48aac82c61b3e51a47755676199a5b3aa32b23bc29ccdecc42ee"
+  url "https://github.com/uberblick-ai/ub-agents/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "a38278b8794549f21ddf110ca96dd33769d7701c95cb62928e2a528f4b85506f"
   license "MIT"
   head "https://github.com/uberblick-ai/ub-agents.git", branch: "main"
 
   depends_on "gh"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "linkify-it-py" do
     url "https://files.pythonhosted.org/packages/45/98/7a1a5f31fd5c7ba93e963b168e244b8e3dd705b3d2a718e3c3307583bf57/linkify_it_py-2.2.0.tar.gz"
