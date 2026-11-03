@@ -71,7 +71,8 @@ class UbAgents < Formula
     system "git", "init"
     system "git", "remote", "add", "origin", "https://github.com/example/project.git"
     system bin/"ub-agents", "init", "--repository", "example/project"
-    assert_match "0 required failures", shell_output("#{bin}/ub-agents doctor --offline")
+    # Exit status 0 means no required failures; doctor's wording changes between releases.
+    system bin/"ub-agents", "doctor", "--offline"
     system libexec/"bin/python", "-c", "from ub_agents.view.ui import View"
   end
 end
