@@ -1,9 +1,9 @@
 class Uberblick < Formula
   desc "Local-first collaborative documents for people and agents"
   homepage "https://github.com/uberblick-ai/uberblick-2"
-  url "https://github.com/uberblick-ai/homebrew-tap/releases/download/v0.4.16/uberblick-0.4.16.tar.gz"
-  version "0.4.16"
-  sha256 "6e568623b1079deea75c6323335c88f668db13d56a3736792208b7f575910864"
+  url "https://github.com/uberblick-ai/homebrew-tap/releases/download/v0.4.17/uberblick-0.4.17.tar.gz"
+  version "0.4.17"
+  sha256 "1fc0f516f459acc6679f3fb178a0f5275d545119c348ce11663af6f9cfb04dde"
   license "MIT"
 
   depends_on "node"
